@@ -1,6 +1,6 @@
 # Impf-Tracker-Saarland
 
-In diesem Repo finden Sie einen Impfplatztracker (inkl. parallel Version) und eine Klickbot mit einem Helfertool.
+In diesem Repo finden Sie einen Impfplatztracker (inkl. paralleler Version) und einen Klickbot mit einem Helfertool. Mit den hier angebotetenen Programmen können Sie sich im Saarland schnell und einfach einen Impfplatz verschaffen. 
 
 
 # Vorraussetzungen
