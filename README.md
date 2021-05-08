@@ -33,3 +33,6 @@ Wie coronajson.py nur parallelisiert.
 
 # Codeanpassungen
 Ändern Sie den Code so viel Sie möchten unter der Bedingung, dass Sie damit keine Impftermine verkaufen. Nur für den privaten nicht kommerziellen Gebrauch gestattet. Bitte beachtet den Fair-Use-Aspekt, dass die Website der Impfplatzvergabe nicht dauerhaft DDosed wird. Danke für Ihre Ehrlichkeit.
+
+# Verbesserungen und Vorschläge
+Jeder Verbesserungsvorschlag oder Bug-Report im Issues-Bereich wird reviewed und ggf. verfolgt und implementiert.
