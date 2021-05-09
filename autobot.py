@@ -35,14 +35,14 @@ def tryP():
                     r,g,b = pic.getpixel((x,y))
                     if (b in range(200, 250)):
                         mousePos([x+800,y+311])
-                        click()   #click on date
+                        leftClick()   #click on date
                         pic = pyautogui.screenshot(region=(800,311,500,800)) 
                         for x in range(0, width, 5):
                             for y in range(0, height, 5):
                                 r,g,b = pic.getpixel((x,y))
                                 if (b in range(150, 200)):
                                     mousePos([x+800,y+311])
-                                    click() #click on weiter
+                                    leftClick() #click on weiter
                                     time.sleep(0.3)
                                     mousePos([1050,520])
                                     leftClick() # click on bestaetigen
