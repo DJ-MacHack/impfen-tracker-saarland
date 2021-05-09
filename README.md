@@ -12,6 +12,7 @@ In diesem Repo finden Sie einen Impfplatztracker (inkl. paralleler Version) und 
  - keyboard
  - pywin32
  - pillow
+ - opencv-python
 
 # Achtung
 
