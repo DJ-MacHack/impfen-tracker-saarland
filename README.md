@@ -8,6 +8,7 @@ In diesem Repo finden Sie einen Impfplatztracker (inkl. paralleler Version) und 
  - Python 3.9.1
  - selenium
  - chromedriver
+ - pyautogui
 
 # Achtung
 
