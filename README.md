@@ -11,6 +11,7 @@ In diesem Repo finden Sie einen Impfplatztracker (inkl. paralleler Version) und 
  - pyautogui
  - keyboard
  - pywin32
+ - pillow
 
 # Achtung
 
