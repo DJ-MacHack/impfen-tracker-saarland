@@ -9,6 +9,10 @@ In diesem Repo finden Sie einen Impfplatztracker (inkl. paralleler Version) und 
  - selenium
  - chromedriver
  - pyautogui
+ - keyboard
+ - pywin32
+ - pillow
+ - opencv-python
 
 # Achtung
 
