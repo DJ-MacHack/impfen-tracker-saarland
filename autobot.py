@@ -27,17 +27,16 @@ def tryP(zentrum, buchen):
             leftClick() #click on place
             mousePos([1050,600])
             leftClick() #click on weiter
-            time.sleep(0.33)
+            time.sleep(0.30)
             next
         elif pyautogui.locateOnScreen(os.getcwd() + '\\nothing.png', grayscale=True, confidence=0.8) != None:
             mousePos([950,390])
             leftClick() #click on zurück
-            time.sleep(0.33)
+            time.sleep(0.30)
             next
         else:
-            place = pyautogui.locateOnScreen(os.getcwd() + '\\date.png', grayscale=True, confidence=0.3)
+            place = pyautogui.locateCenterOnScreen(os.getcwd() + '\\date.png', grayscale=True, confidence=0.3)
             if place:
-                place = pyautogui.center(place)
                 mousePos([place.x,place.y])
                 leftClick() #click on first date
                 time.sleep(0.01)
@@ -49,12 +48,11 @@ def tryP(zentrum, buchen):
             # leftClick() #click on first date
             # time.sleep(0.01)
             #########
-            place = pyautogui.locateOnScreen(os.getcwd() + '\\weiter.png', grayscale=True, confidence=0.8)
+            place = pyautogui.locateCenterOnScreen(os.getcwd() + '\\weiter.png', grayscale=True, confidence=0.8)
             if place:
-                place = pyautogui.center(place)
                 mousePos([place.x,place.y])
                 leftClick() #click on weiter
-                time.sleep(0.33)
+                time.sleep(0.30)
             else:
                 next
             #########
@@ -62,7 +60,7 @@ def tryP(zentrum, buchen):
             # mousePos([1050,730]) #bei 5+ Terminen
             ## mousePos([1050,450]) #bei 1 Termin
             # leftClick() #click on weiter
-            # time.sleep(0.33)
+            # time.sleep(0.30)
             #########    
             if buchen == "1":
                 mousePos([1060,520])
