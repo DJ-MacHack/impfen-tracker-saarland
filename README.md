@@ -21,7 +21,11 @@ Unsere Einstellungen sind Windows 10 - Google Chrome 90 - 1920x1080 - Zoom: 100%
 
 ## autobot.py
 
-Klickt wenn Sie sich auf [Saarland Impflisten Login](https://impfen-saarland.de/service/login) authentifiziert und Ihren Namen gewählt haben, automatisch so lange bis Sie einen Termin für Ihr [Impfzentrum](https://impfen-saarland.de/service/waitlist_entries) haben. **Standardmäßig ist Lebach - Nacht gewählt.**
+Klickt wenn Sie sich auf [Saarland Impflisten Login](https://impfen-saarland.de/service/login) authentifiziert und Ihren Namen gewählt haben, automatisch so lange bis Sie einen Termin für Ihr [Impfzentrum](https://impfen-saarland.de/service/waitlist_entries) haben. **Sollte der Bot zu langsam sein, im Code Pramameter anpassen.** time.sleep kann man ggf. auf 0.2 reduzieren und den ersten Termin anzuklicken kann man auch hard-coden.
+
+## autobot-sb-change.py
+
+Hard-coded um einen Impfplatz in Saarbrücken auf einen früheren Termin umzubuchen (wenn man schon einen Termin hat). Geht nur wenn Saarbrücken mehr als 5 Impfplätze gleichzeitig veröffentlicht!
 
 ## clickbot.py
 
