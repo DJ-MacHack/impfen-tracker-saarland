@@ -8,38 +8,60 @@ import win32api, win32con
 
 def tryP(zentrum, buchen):
     zentrumPos = 0
+    zentrumlink = ""
+    continueButton = 0
     if zentrum == "1":
-        zentrumPos = 330 #SB
+        #zentrumPos = 330 #SB
+        zentrumlink = '\\saarbruecken.png'
     if zentrum == "2":
-        zentrumPos = 380 #SLS
+        #zentrumPos = 350 #SLS
+        zentrumlink = '\\saarlouis.png'
     if zentrum == "3":
-        zentrumPos = 430 #NK
+        #zentrumPos = 405 #NK
+        zentrumlink = '\\neunkirchen.png'
     if zentrum == "4":
-        zentrumPos = 480 #LB
+        #zentrumPos = 480 #LB
+        zentrumlink = '\\lebach.png'
     if zentrum == "5":
-        zentrumPos = 530 #LBN  
+        #zentrumPos = 505 #LBN  
+        zentrumlink = '\\lbn.png'
     if zentrum == 0:
         print("Fehler 1")  
         return
+
     while keyboard.is_pressed('q') == False:
         if pyautogui.locateOnScreen(os.getcwd() + '\\screen.png', grayscale=True, confidence=0.8) != None:
-            mousePos([910,zentrumPos])
-            leftClick() #click on place
-            mousePos([1050,600])
-            leftClick() #click on weiter
-            time.sleep(0.30)
-            next
+            #mousePos([910,zentrumPos])
+            #leftClick() #click on place
+            if zentrumPos == 0:
+                zentrumPos = pyautogui.locateCenterOnScreen(os.getcwd() + zentrumlink, grayscale=True, confidence=0.7)
+                print(zentrumPos)
+                continueButton = pyautogui.locateCenterOnScreen(os.getcwd() + '\\weiternicht.png', grayscale=True, confidence=0.7)
+            else:
+                mousePos([zentrumPos.x,zentrumPos.y])
+                leftClick() #click on place
+                mousePos([continueButton.x,continueButton.y])
+                leftClick() #click on weiter
+                time.sleep(0.05)
+                next
+
         elif pyautogui.locateOnScreen(os.getcwd() + '\\nothing.png', grayscale=True, confidence=0.8) != None:
-            mousePos([950,390])
+            mousePos([950,360])
             leftClick() #click on zurück
-            time.sleep(0.30)
+            time.sleep(0.05)
             next
         else:
+
+            place = pyautogui.locateCenterOnScreen(os.getcwd() + '\\booking.png', grayscale=True, confidence=0.7)
+            if place:
+                mousePos([place.x,place.y])
+                leftClick() #click on weiter
+
             place = pyautogui.locateCenterOnScreen(os.getcwd() + '\\date.png', grayscale=True, confidence=0.3)
             if place:
                 mousePos([place.x,place.y])
                 leftClick() #click on first date
-                time.sleep(0.01)
+                #time.sleep(0.01)
             else:
                 next
             #########
@@ -52,7 +74,7 @@ def tryP(zentrum, buchen):
             if place:
                 mousePos([place.x,place.y])
                 leftClick() #click on weiter
-                time.sleep(0.30)
+                time.sleep(0.01)
             else:
                 next
             #########
@@ -61,18 +83,37 @@ def tryP(zentrum, buchen):
             ## mousePos([1050,450]) #bei 1 Termin
             # leftClick() #click on weiter
             # time.sleep(0.30)
-            #########    
-            if buchen == "1":
-                mousePos([1060,520])
-                leftClick() #click on buchen
-                return
+            #########
+
+            # if the bot is slower and the Termini (sry für no english :D) is booked somehow 
+            # place = pyautogui.locateCenterOnScreen(os.getcwd() + '\\booked_error.png', grayscale=True, confidence=0.7)
+            # if place:
+            #     next
+                
+                
+            place = pyautogui.locateCenterOnScreen(os.getcwd() + '\\booking.png', grayscale=True, confidence=0.7)
+            if place:
+                mousePos([place.x,place.y])
+                leftClick() #click on weiter
+
+
+            # if buchen == "1":
+            #     mousePos([1060,520])
+            #     leftClick() #click on buchen
+                
             if buchen == "2":
                 mousePos([1060,680])
                 leftClick() #click on termin verschieben
-                return
+
             if buchen == 0:
                 print("Fehler 2")   
-                return 
+
+            place = pyautogui.locateCenterOnScreen(os.getcwd() + '\\logout.png', grayscale=True, confidence=0.4)
+            if place:
+                print("i am out")
+                return
+
+    
 
 def leftClick():
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
